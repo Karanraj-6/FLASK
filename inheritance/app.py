@@ -8,23 +8,24 @@ app = Flask(__name__)
 def home():
     return "this is home page"
 
-@app.route("/passed/<sname>/<int:smarks>")
+@app.route("/home/passed/<sname>/<int:smarks>")
 def passed(sname,smarks):
-    return f"congrats {sname} !your passed with {smarks} marks"
+    return f"congrats {sname} ! your passed with {smarks} marks"
 
-@app.route("/failed/<sname>/<int:smarks>")
+@app.route("/home/failed/<sname>/<int:smarks>")
 def failed(sname,smarks):
-    return f"sorry {sname}! your failed with {smarks} marks"
+    return f"sorry {sname} ! your failed with {smarks} marks"
 
 
 @app.route("/home/<name>/<int:marks>")
-def eval(name,marks):
+def evaluate( name ,marks):
+    
     if (marks >= 30):
         time.sleep(1)
-        return redirect(url_for('passed',sname=name,smarks=marks))
+        return redirect(url_for("passed", sname=name, smarks=marks))
     else:
         time.sleep(1)
-        return redirect(url_for('failed',sname=name,smarks=marks))
+        return redirect(url_for("failed", sname=name, smarks=marks))
 
 
 if __name__ == "__main__":
