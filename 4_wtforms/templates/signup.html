@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block content%}
+<form action="" method="post"> 
+    {{ form.hidden_tag() }}
+    <div>
+        {{ form.username.label }}
+        {{ form.username }}
+    </div>
+    <br>
+    <div>
+        {{ form.email.label }}
+        {{ form.email }}
+    </div>
+    <br>
+    <div>
+        {{ form.gender.label }}
+        {{ form.gender }}
+    </div>
+    <br>
+    <div>
+        {{ form.DateOfBirth.label }}
+        {{ form.DateOfBirth }}
+    </div>
+    <br>
+    <div>
+        {{ form.password.label }}
+        {{ form.password }}
+    </div>
+    <br>
+    <div>
+        {{ form.ConfirmPassword.label }}
+        {{ form.ConfirmPassword }}
+    </div>
+    <br>
+    <div>
+        {{ form.submit() }}
+    </div>
+    <br>
+</form>
+
+{% endblock content%}
